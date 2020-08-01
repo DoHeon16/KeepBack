@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StationFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/metro"
+            android:layout_width="match_parent"
+            android:layout_height="312dp"
+            android:src="@drawable/metro" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/subway"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:entries="@array/linelist"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toStartOf="@+id/station"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <AutoCompleteTextView
+                android:id="@+id/station"
+                android:layout_width="230dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="4dp"
+                android:text="역명을 입력하세요."
+                android:textColor="#B8B2B2"
+                app:layout_constraintBottom_toBottomOf="@+id/subway"
+                app:layout_constraintEnd_toStartOf="@+id/search"
+                app:layout_constraintStart_toEndOf="@+id/subway" />
+
+            <Button
+                android:id="@+id/search"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:text="검색"
+                app:layout_constraintBaseline_toBaselineOf="@+id/station"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/station" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
